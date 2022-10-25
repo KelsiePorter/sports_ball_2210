@@ -3,7 +3,8 @@ require 'pry'
 class Team 
   attr_reader :team_name,
               :city,
-              :roster
+              :roster,
+              :details
 
   def initialize(team_name, city)
     @team_name = team_name
@@ -41,6 +42,13 @@ class Team
       monthly_costs += player.monthly_cost
     end
     contract_lengths * monthly_costs
+  end
+
+  def details
+    team_details = {
+      "total_value" => total_value,
+      "player_count" => player_count
+    }
   end
 
 end
