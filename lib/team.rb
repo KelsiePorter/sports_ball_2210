@@ -31,4 +31,16 @@ class Team
     end
   end
 
+  def total_value 
+    contract_lengths = 0
+    monthly_costs = 0
+    @roster.map do |player|
+      contract_lengths += player.contract_length
+    end
+    @roster.map do |player|
+      monthly_costs += player.monthly_cost
+    end
+    contract_lengths * monthly_costs
+  end
+
 end
