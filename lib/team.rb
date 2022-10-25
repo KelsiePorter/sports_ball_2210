@@ -1,3 +1,5 @@
+require 'pry'
+
 class Team 
   attr_reader :team_name,
               :city,
@@ -11,6 +13,10 @@ class Team
 
   def player_count 
     @roster.size
+  end
+
+  def add_player(player)
+    @roster << player 
   end
 
 end
